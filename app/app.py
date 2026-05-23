@@ -31,7 +31,9 @@ def health():
 
 @app.route('/simulate-incident')
 def simulate_incident():
-    os._exit(1)
+    import os
+    os.system("kill 1")
+    return "Incident simulated"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
